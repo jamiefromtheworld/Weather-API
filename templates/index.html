@@ -1,0 +1,17 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <title>Call Python function from HTML button click</title> 
+</head> 
+<button id="run-button">Run</button> 
+ 
+<script> 
+const button = document.getElementById('run-button'); 
+button.addEventListener('click', () => { 
+    fetch('/run-code', {method: 'POST'}) 
+        .then(response => response.text()) 
+        .then(text => console.log(text)); 
+}); 
+</script> 
+
+</html> 
